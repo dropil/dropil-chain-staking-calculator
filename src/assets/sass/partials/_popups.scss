@@ -1,0 +1,211 @@
+.popups {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba($c-black, 0.25);
+  z-index: 1000;
+
+  .popup {
+    @include centerer();
+    width: 684px;
+    max-width: 95%;
+    max-height: 97%;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: $c-popup-bg;
+    border: 1px solid $c-popup-border;
+    padding: 25px 40px;
+    box-shadow: $shadow-light;
+    border-radius: 6px;    
+
+    a.close {
+      color: $c-red;
+      font-size: 28px;
+      position: absolute;
+      top: 15px;
+      right: 25px;
+
+      &:after {
+        @include fa-icon;
+        @extend .far;
+        content: fa-content($fa-var-times);        
+      }            
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: 600;
+      font-family: Lato;
+      font-size: 1.75rem;
+      margin-bottom: .5em;
+    }
+
+    p {
+      margin-bottom: .5em;
+      color: $c-black;
+    }
+
+    .complete {
+      margin-top: 1em;
+    }
+
+    .signed-tx, .broadcasted-tx {
+      background-color: $c-bg;
+    }
+  }
+}
+
+.popup.hd-path {
+  width: 500px;
+  text-align: center;
+
+  .address {
+    font-size: 14px;
+  }
+
+  .edit {
+    margin-top: 1em;
+  }
+
+  .inputs {
+    color: $c-black;
+    font-size: 18px;
+    font-weight: 600;
+
+    * {
+      display: inline-block;
+      margin: 0 2px;
+    }
+
+    input {
+      width: 30px;      
+      font-weight: 600;
+      padding: 0;
+      text-align: center;
+      border-bottom-color: $c-black;
+    }
+  }
+}
+
+.popup {
+  &.new-proposal, &.vote {
+    transition: .3s ease all;    
+
+    &.wide {
+      width: 850px;
+    }
+
+    h3 {
+      font-weight: 600;
+    }
+
+    .wrapper {
+      @extend .clearfix;
+      position: relative;
+    }
+  
+    .text-button {
+      margin-bottom: 2em;
+  
+      > div {
+        float: right;
+        margin-top: 1em;
+      }
+    }
+
+    .complete {
+      a.btn {
+        float: right;
+      }
+    }
+  }
+}
+
+.popup.new-proposal {    
+  .form {
+    margin-top: 1em;    
+  }  
+
+  .buttons {
+    margin-top: 1em;
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+  }  
+}
+
+.popup.vote {
+  width: 450px;  
+
+  .notice {
+    margin-top: -0.75em;
+    margin-bottom: 1em;
+  }
+
+  .title {
+    font-family: Lato;
+    font-size: 1.25em;
+    font-weight: 600;
+    color: $c-black;
+    margin-bottom: .5em;
+  }
+
+  .options {
+    margin-top: 1em;
+
+    .option {
+      text-align: center;
+      padding: .75em 0;
+      margin-bottom: .7em;
+      background-color: $c-brand;
+      color: $c-well-bg;
+      border-radius: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: Lato;
+      letter-spacing: 1px;
+      font-size: 14px;
+      position: relative;
+
+      &:after {
+        content: '\A';
+        position: absolute;
+        width: 100%; 
+        height: 100%;
+        top: 0; 
+        left: 0;
+        background:rgba(0,0,0,0.25);
+        opacity: 0;
+        transition: .3s ease all;        
+      }
+
+      &:hover:after {
+        opacity: 1;
+      }
+
+      &.yes {
+        background-color: $c-green;
+      }
+
+      &.no {
+        background-color: $c-red;
+      }
+
+      &.veto {
+        background-color: $c-blue;
+      }
+
+      &.abstain {
+        background-color: $c-medium-grey;
+      }
+    }
+  }
+}
