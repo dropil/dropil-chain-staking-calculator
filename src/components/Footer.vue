@@ -11,7 +11,7 @@
             <a href="https://dropilchain.com">Website</a>
           </li>          
           <li>
-            <a href="https://github.com/dropil/dropil-chain-app">Github</a>
+            <a href="https://github.com/dropil/dropil-chain-staking-calculator">Github</a>
           </li>
           <li>
             <a href="https://home.dropil.com/support">Support</a>
